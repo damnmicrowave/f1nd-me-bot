@@ -225,15 +225,3 @@ class FaceR:
 
 
 Model = FaceR()
-
-source = "users/"
-photos = [i for i in os.listdir(source) if i[-4:] == '.jpg']
-Model.users_photos(source, photos)
-
-source_2 = "groups/-80270762/GoTo Camp Summer 07_2018"
-vk_imgs = [i for i in os.listdir(source_2)]
-Model.album_recog(vk_imgs)
-
-source_3 = "user_face/"
-photo_name = "face.jpg"
-Model.user_photo(source_3, photo_name)

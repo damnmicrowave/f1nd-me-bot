@@ -15,7 +15,7 @@ logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s
 
 logger = logging.getLogger(__name__)
 
-PORT = int(os.environ.get('PORT', '8443'))
+# PORT = int(os.environ.get('PORT', '8443'))
 
 model = FaceR()
 
@@ -58,7 +58,7 @@ def photo_handler(bot, update):
     photos = [i for i in os.listdir(another_source) if i[-4:] == '.jpg']
     model.users_photos(source, photos)
 
-    another_another_source = "groups/-80270762/GoTo Camp Summer 07_2018"
+    another_another_source = "groups/-80270762/GoTo Camp Summer 07_2018/"
     vk_imgs = [i for i in os.listdir(another_another_source)]
 
     names_list = model.album_recog(vk_imgs)
@@ -104,6 +104,7 @@ def main():
     #                       port=PORT,
     #                       url_path=config.token)
     # updater.bot.set_webhook('https://f1nd-me-bot.herokuapp.com/' + config.token)
+
     updater.start_polling()
     updater.idle()
 
